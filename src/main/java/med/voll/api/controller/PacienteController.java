@@ -1,9 +1,9 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.paciente.Paciente;
-import med.voll.api.paciente.PacienteDTO;
-import med.voll.api.paciente.PacienteRepository;
+import med.voll.api.domain.paciente.Paciente;
+import med.voll.api.domain.paciente.PacienteDTO;
+import med.voll.api.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
