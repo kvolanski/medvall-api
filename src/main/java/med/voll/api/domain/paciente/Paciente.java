@@ -25,10 +25,28 @@ public class Paciente {
     @Embedded
     private Endereco endereco;
 
-    public Paciente(PacienteDTO pacienteDTO) {
+    public Paciente(CadastroPacienteDTO pacienteDTO) {
         this.nome = pacienteDTO.nome();
         this.email = pacienteDTO.email();
         this.telefone = pacienteDTO.telefone();
         this.endereco = new Endereco(pacienteDTO.endereco());
+    }
+
+    public void atualizar(AtualizarPacienteDTO atualizarPacienteDTO) {
+        if (atualizarPacienteDTO.nome() != null){
+            this.nome = atualizarPacienteDTO.nome();
+        }
+
+        if (atualizarPacienteDTO.email() != null){
+            this.email = atualizarPacienteDTO.email();
+        }
+
+        if(this.telefone != null){
+            this.telefone = atualizarPacienteDTO.telefone();
+        }
+
+        if (atualizarPacienteDTO.enderecoDTO() != null){
+            this.endereco.atualizar(atualizarPacienteDTO.enderecoDTO());
+        }
     }
 }
